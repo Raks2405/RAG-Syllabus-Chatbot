@@ -1,0 +1,38 @@
+{
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    
+
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
+    "headers": [
+      {
+        "source": "**",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' data: https://firebasestorage.googleapis.com; connect-src 'self' https://firebasestorage.googleapis.com https://generativelanguage.googleapis.com https://gemini-proxy-113410734669.us-central1.run.app; font-src 'self' data: https://cdnjs.cloudflare.com; worker-src 'self' blob: https://cdnjs.cloudflare.com; child-src 'self' blob:; frame-src 'self' https://firebasestorage.googleapis.com"
+          }
+        ]
+      }
+    ]
+  },
+  "emulators": {
+    "hosting": {
+      "port": 5000
+    },
+    "ui": {
+      "enabled": true
+    },
+    "singleProjectMode": true
+  }
+}
